@@ -1053,7 +1053,7 @@ export default function MyCalendar({ headers, thePermissions }) {
                               {event.student && (
                                 <span
                                   style={{
-                                    fontFamily: "Athiti",
+                                    fontFamily: "Lato",
                                     fontWeight: 600,
                                   }}
                                 >
@@ -1204,7 +1204,7 @@ export default function MyCalendar({ headers, thePermissions }) {
 
                 <p
                   style={{
-                    fontFamily: "Athiti",
+                    fontFamily: "Lato",
                     fontSize: "1.1rem",
                   }}
                 >

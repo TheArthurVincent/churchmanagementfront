@@ -211,7 +211,7 @@ export const TopBar: FC = () => {
               style={{
                 fontWeight: 700,
                 fontSize: "1.1rem",
-                fontFamily: "Athiti",
+                fontFamily: "Lato",
                 textDecoration: "none",
               }}
             >
@@ -239,7 +239,7 @@ export const TopBar: FC = () => {
                     textDecoration: "none",
                     fontWeight: 700,
                     fontSize: "1.1rem",
-                    fontFamily: "Athiti",
+                    fontFamily: "Lato",
                   }}
                 >
                   {link.title}
@@ -273,7 +273,7 @@ export const TopBar: FC = () => {
                     style={{
                       fontWeight: 700,
                       fontSize: "1.1rem",
-                      fontFamily: "Athiti",
+                      fontFamily: "Lato",
                     }}
                   >
                     {link.title}

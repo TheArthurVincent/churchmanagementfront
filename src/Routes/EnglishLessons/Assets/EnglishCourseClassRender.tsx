@@ -300,7 +300,7 @@ export default function EnglishLessonsRender({
               padding: "0.3rem",
               backgroundColor: "#f9f9f9",
               fontSize: "1.1rem",
-              fontFamily: "Athiti",
+              fontFamily: "Lato",
               fontWeight: 600,
               textAlign: "center",
             }}
@@ -466,7 +466,7 @@ export default function EnglishLessonsRender({
                       >
                         <span
                           style={{
-                            fontFamily: "Athiti",
+                            fontFamily: "Lato",
                             fontWeight: 800,
                             fontSize: "1.2rem",
                           }}
@@ -535,7 +535,7 @@ export default function EnglishLessonsRender({
                                     <span style={{ maxWidth: "80%" }}>
                                       <span
                                         style={{
-                                          fontFamily: "Athiti",
+                                          fontFamily: "Lato",
                                           fontWeight: 800,
                                           fontSize: "1.1rem",
                                         }}

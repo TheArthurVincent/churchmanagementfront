@@ -14,7 +14,7 @@ export function InputFieldSignUp({
       style={{
         display: "flex",
         flexDirection: "column",
-        fontFamily: "Athiti",
+        fontFamily: "Lato",
         justifyContent: "center",
       }}
     >
@@ -24,7 +24,7 @@ export function InputFieldSignUp({
           fontSize:"15px",
           paddingBottom: "2px",
           fontWeight: 500,
-          fontFamily: "Athiti",
+          fontFamily: "Lato",
         }}
       >
         {placeholder}

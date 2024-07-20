@@ -35,7 +35,7 @@ export default function SentenceLessonModelSlide({
           >
             <strong
               style={{
-                fontFamily: "Athiti",
+                fontFamily: "Lato",
                 fontSize: "3rem",
                 color: !sentence.portuguese ? secondaryColor() : primaryColor(),
               }}

@@ -68,7 +68,7 @@ export const ArvinButton = styled.button<ArvinButtonProps>`
   );
   color: ${(props) => (props.color === "white" ? "black" : alwaysWhite())};
   padding: 3px 1rem;
-  font-family: Athiti;
+  font-family: Lato;
   border-radius: 8px;
   border: none;
   cursor: ${(props) =>
@@ -141,7 +141,7 @@ export const MyButton = styled.button<ButtonProps>`
   );
   color: ${(props) => props.textcolor || alwaysWhite()};
   padding: 5px 1.2rem;
-  font-family: Athiti;
+  font-family: Lato;
   border-radius: 10px;
   border: none;
   cursor: pointer;

@@ -355,7 +355,7 @@ export default function StudentsRanking({
                 borderRadius: "50%",
                 left: name.length < 15 ? "5rem" : "3.4rem",
                 top: "5rem",
-                fontFamily: "Athiti",
+                fontFamily: "Lato",
                 fontWeight: 800,
                 fontSize: "1.4rem",
               }}
@@ -505,7 +505,7 @@ export default function StudentsRanking({
                       <p
                         style={{
                           fontWeight: 600,
-                          fontFamily: "Athiti",
+                          fontFamily: "Lato",
                           padding: "5px",
                           background: theItems[levelNumber].color,
                           color: theItems[levelNumber].textcolor,
@@ -566,7 +566,7 @@ export default function StudentsRanking({
                       </ArvinButton>
                       <p
                         style={{
-                          fontFamily: "Athiti",
+                          fontFamily: "Lato",
                           fontWeight: "600",
                           fontSize: "0.8rem",
                         }}

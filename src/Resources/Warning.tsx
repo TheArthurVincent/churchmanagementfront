@@ -8,7 +8,7 @@ const WarningText: React.FC<WarningTextProps> = ({ text }) => {
   return (
     <div
       style={{
-        fontFamily: "Athiti",
+        fontFamily: "Lato",
         borderRadius: "1rem",
         padding: "1rem",
         textAlign: "center",

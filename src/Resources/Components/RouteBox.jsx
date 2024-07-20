@@ -73,7 +73,7 @@ export const SpanIcon = styled.span`
   opacity: 0.8;
   transition: 0.3s;
   display: flex;
-  font-family: Athiti;
+  font-family: Lato;
   align-items: center;
   &:hover {
     opacity: 1;
@@ -155,7 +155,7 @@ export const fadeIn = keyframes`
 export const DivFont = styled.div`
   font-weight: 700;
   font-size: 1.1rem;
-  font-family: Athiti;
+  font-family: Lato;
   margin: 0;
   @media (max-width: 500px) {
     font-size: 1rem;

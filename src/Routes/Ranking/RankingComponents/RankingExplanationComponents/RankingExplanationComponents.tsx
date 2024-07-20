@@ -41,7 +41,7 @@ export default function RankingExplanationComponent() {
               className={criteria.icon}
               aria-hidden="true"
             />{" "}
-            <span style={{ fontFamily: "Athiti" }}> {criteria.title}</span>
+            <span style={{ fontFamily: "Lato" }}> {criteria.title}</span>
           </h3>
           <div>
             {criteria.score.map((score, index) => (
@@ -65,7 +65,7 @@ export default function RankingExplanationComponent() {
                     backgroundColor: score.color,
                     color: textSecondaryColorContrast(),
                     fontSize: "1.1rem",
-                    fontFamily: "Athiti",
+                    fontFamily: "Lato",
                     fontWeight: 600,
                     padding: "5px",
                     top: "*15px",

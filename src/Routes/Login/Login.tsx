@@ -27,7 +27,7 @@ export function Login() {
 
     setButton(<CircularProgress style={{ color: secondaryColor() }} />);
     try {
-      const response = await axios.post(`${backDomain}/api/v1/studentlogin/`, {
+      const response = await axios.post(`${backDomain}/api/v1/memberlogin/`, {
         email,
         password,
       });
@@ -53,7 +53,6 @@ export function Login() {
     }
   };
 
-  const myLogo = LogoSVG(primaryColor(), secondaryColor(), 2.5);
 
   return (
     <div
@@ -84,7 +83,6 @@ export function Login() {
                 borderRadius: "10px",
               }}
             >
-              <div style={{ margin: "0 auto" }}>{myLogo}</div>
               <InputField
                 value={email}
                 onChange={(event: any) => setEmail(event.target.value)}

@@ -36,7 +36,7 @@ export default function ImageLessonModelSlide({
             <div key={i}>
               <span
                 style={{
-                  fontFamily: "Athiti",
+                  fontFamily: "Lato",
                 }}
               >
                 {image.text}

@@ -40,7 +40,7 @@ export default function RankingExplanation() {
       <ul>
         <li
           style={{
-            fontFamily: "Athiti",
+            fontFamily: "Lato",
             padding: "0.5rem",
             borderRadius: "0 1.05rem ",
             border: "2px groove #FFD51E",
@@ -53,7 +53,7 @@ export default function RankingExplanation() {
         </li>
         <li
           style={{
-            fontFamily: "Athiti",
+            fontFamily: "Lato",
             padding: "0.5rem",
             borderRadius: "0 1.05rem ",
             border: "2px groove #B2B2B2",
@@ -66,7 +66,7 @@ export default function RankingExplanation() {
         </li>
         <li
           style={{
-            fontFamily: "Athiti",
+            fontFamily: "Lato",
             padding: "0.5rem",
             borderRadius: "0 1.05rem ",
             border: "2px groove #693D2B",
