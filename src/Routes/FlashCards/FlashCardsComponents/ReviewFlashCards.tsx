@@ -22,6 +22,7 @@ interface FlashCardsPropsRv {
 const ReviewFlashCards = ({ headers, onChange, change }: FlashCardsPropsRv) => {
   useState<number>(0);
   const [myId, setId] = useState<string>("");
+  const [myPermissions, setPermissions] = useState<string>("");
   const [cards, setCards] = useState<any[]>([]);
   const [isDisabled, setIsDisabled] = useState<boolean>(true);
   const [answer, setAnswer] = useState<boolean>(false);
@@ -33,7 +34,6 @@ const ReviewFlashCards = ({ headers, onChange, change }: FlashCardsPropsRv) => {
 
   const timerDisabled = () => {
     setCount(4);
-
     setIsDisabled(true);
     setTimeout(() => {
       setCount(3);
@@ -52,8 +52,9 @@ const ReviewFlashCards = ({ headers, onChange, change }: FlashCardsPropsRv) => {
   useEffect(() => {
     const user = localStorage.getItem("loggedIn");
     if (user) {
-      const { id } = JSON.parse(user);
+      const { permissions, id } = JSON.parse(user);
       setId(id);
+      setPermissions(permissions);
     }
     setAnswer(false);
   }, []);
@@ -67,7 +68,6 @@ const ReviewFlashCards = ({ headers, onChange, change }: FlashCardsPropsRv) => {
         { flashcardId: id, difficulty },
         { headers: actualHeaders }
       );
-      console.log(response.data);
       setAnswer(false);
       seeCardsToReview();
       onChange(!change);
@@ -102,7 +102,6 @@ const ReviewFlashCards = ({ headers, onChange, change }: FlashCardsPropsRv) => {
             )
           : null;
       }
-      console.log("Look here", response.data);
       setCards(response.data.dueFlashcards);
       setCardsCount(cardsCountFetch);
       setCardsLength(thereAreCards);
@@ -238,7 +237,7 @@ const ReviewFlashCards = ({ headers, onChange, change }: FlashCardsPropsRv) => {
                       </span>{" "}
                       |{" "}
                     </div>{" "}
-                    {myId === "651311fac3d58753aa9281c5" && (
+                    {myPermissions === "superadmin" && (
                       <ArvinButton
                         onClick={() => handleSeeModal(cards[0].id)}
                         color="yellow"

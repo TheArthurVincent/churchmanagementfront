@@ -1,17 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { HOne, RouteDiv } from "../../../../Resources/Components/RouteBox";
+import { HOne } from "../../../../Resources/Components/RouteBox";
 import axios from "axios";
-import {
-  Button,
-  DivGrid,
-  backDomain,
-} from "../../../../Resources/UniversalComponents";
+import { DivGrid, backDomain } from "../../../../Resources/UniversalComponents";
 import { CircularProgress } from "@mui/material";
-import {
-  primaryColor,
-  secondaryColor,
-  textPrimaryColorContrast,
-} from "../../../../Styles/Styles";
+import { lightGreyColor, secondaryColor } from "../../../../Styles/Styles";
 import HTMLEditor from "../../../../Resources/Components/HTMLEditor";
 import { ArvinButton } from "../../../../Resources/Components/ItemsLibrary";
 
@@ -19,9 +11,10 @@ export function NewTutoring({ headers }) {
   const [newDate, setNewDate] = useState("");
   const [newVideoUrl, setNewVideoUrl] = useState("");
   const [newAttachments, setAttachments] = useState("");
-  const [newHWDescription, setNewHWDescription] = useState("");
   const [dueDate, setDueDate] = useState("");
-
+  const [seeHW, setSeeHW] = useState(false);
+  
+  const [newHWDescription, setNewHWDescription] = useState("");
   const handleHWDescriptionChange = (htmlContent) => {
     setNewHWDescription(htmlContent);
   };
@@ -122,7 +115,13 @@ export function NewTutoring({ headers }) {
               );
             })}
           </select>
-          <ArvinButton onClick={handleAddTutoring}>+ Aula</ArvinButton>
+          <div
+        style={{
+          cursor: "pointer",
+          padding: "1rem",
+          backgroundColor: lightGreyColor(),
+        }}
+          onClick={handleAddTutoring}>+ Aula</div>
         </div>
         {tutorings.map((tutoring, index) => (
           <div key={index}>
@@ -184,37 +183,72 @@ export function NewTutoring({ headers }) {
                 }}
                 required
               />
+              <div
+                style={{
+                  cursor: "pointer",
+                  padding: "1rem",
+                  backgroundColor: lightGreyColor(),
+                }}
+                onClick={() => {
+                  setDueDate("");
+                  setNewHWDescription("");
+                  setSeeHW(!seeHW);
+                }}
+              >
+                HW
+              </div>
             </DivGrid>
-            <input
+            <div
               style={{
-                alignItems: "center",
-                justifyContent: "space-around",
-                padding: "0.5rem",
-                margin: "0",
-                fontSize: "1.1rem",
-                fontWeight: 500,
+                display: seeHW ? "block" : "none",
               }}
-              type="date"
-              placeholder="Data"
-              value={dueDate}
-              onChange={(e) => {
-                setDueDate(e.target.value);
-              }}
-              required
-            />
-            <ArvinButton
-              disabled={disabled}
-              style={{
-                marginLeft: "auto",
-                cursor: disabled ? "not-allowed" : "pointer",
-              }}
-              type="submit"
             >
-              {button}
-            </ArvinButton>
-            <HTMLEditor onChange={handleHWDescriptionChange} />
+              <h3>Homework</h3>
+              <div
+                style={{
+                  display: "grid",
+                  padding: "1rem",
+                  border: `solid 2px ${lightGreyColor()}`,
+                }}
+              >
+                <input
+                  style={{
+                    alignItems: "center",
+                    justifyContent: "space-around",
+                    padding: "0.5rem",
+                    margin: "0",
+                    fontSize: "1.1rem",
+                    fontWeight: 500,
+                  }}
+                  type="date"
+                  placeholder="Data"
+                  value={dueDate}
+                  onChange={(e) => {
+                    setDueDate(e.target.value);
+                  }}
+                />
+
+                <div
+                  style={{
+                    marginBottom: "3rem",
+                  }}
+                >
+                  <HTMLEditor onChange={handleHWDescriptionChange} />
+                </div>
+              </div>{" "}
+            </div>
           </div>
         ))}
+        <ArvinButton
+          disabled={disabled}
+          style={{
+            marginLeft: "auto",
+            cursor: disabled ? "not-allowed" : "pointer",
+          }}
+          type="submit"
+        >
+          {button}
+        </ArvinButton>
       </form>
     </>
   );

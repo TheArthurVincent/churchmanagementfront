@@ -1,23 +1,13 @@
 import React, { useEffect, useState } from "react";
-import Ranking from "./Ranking/Ranking";
-import GroupClasses from "./GroupClasses/GroupClasses";
 import { Login } from "@mui/icons-material";
 import { verifyToken } from "../App";
 import { Outlet, Route, Routes } from "react-router-dom";
 import { pathGenerator } from "../Resources/UniversalComponents";
 import MyProfile from "./MyProfile/MyProfile";
 import Faq from "./Faq/Faq";
-import MyClasses from "./MyClasses/MyClasses";
-import MyCalendar from "./MyCalendar/MyCalendar";
-import Adm from "./Adm/Adm";
-import Blog from "./Blog/Blog";
-import { LevelCard } from "./LevelCard/LevelCard";
 import { BlogRouteSizeControlBox } from "../Resources/Components/RouteBox";
 import { HeadersProps } from "../Resources/types.universalInterfaces";
 import { TopBar } from "../Application/TopBar/TopBar";
-import FlashCards from "./FlashCards/FlashCards";
-import Homework from "./Homework/Homework";
-import EnglishCourses from "./EnglishLessons/EnglishCourses";
 import AppFooter from "../Application/Footer/Footer";
 
 export function HomePage({ headers }: HeadersProps) {
@@ -47,70 +37,71 @@ export function HomePage({ headers }: HeadersProps) {
   }, []);
 
   const appRoutes = [
-    {
-      title: "Blog",
-      path: "/",
-      levelcard: true,
-      component: <Blog headers={headers} />,
-    },
-    {
-      title: "My Classes",
-      component: <MyClasses headers={headers} />,
-    },
-    {
-      title: "Group Classes",
-      component: <GroupClasses headers={headers} />,
-    },
-    {
-      title: "Homework",
-      component: (
-        <Homework change={change} setChange={setChange} headers={headers} />
-      ),
-    },
-    {
-      title: "My Calendar",
-      component: (
-        <MyCalendar thePermissions={thePermissions} headers={headers} />
-      ),
-    },
-    {
-      title: "Flash Cards",
-      levelcard: true,
-      component: (
-        <FlashCards change={change} onChange={setChange} headers={headers} />
-      ),
-    },
-    {
-      title: "Ranking",
-      levelcard: true,
-      component: <Ranking headers={headers} />,
-    },
-    {
-      title: "English Courses",
-      component: <EnglishCourses headers={headers} />,
-    },
-    {
-      title: "Live Classes",
-      component: <GroupClasses headers={headers} />,
-    },
+    // {
+    //   title: "Blog",
+    //   path: "/blog",
+    //   levelcard: true,
+    //   component: <Blog headers={headers} />,
+    // },
+    // {
+    //   title: "My Classes",
+    //   component: <MyClasses headers={headers} />,
+    // },
+    // {
+    //   title: "Group Classes",
+    //   component: <GroupClasses headers={headers} />,
+    // },
+    // {
+    //   title: "Homework",
+    //   component: (
+    //     <Homework change={change} setChange={setChange} headers={headers} />
+    //   ),
+    // },
+    // {
+    //   title: "My Calendar",
+    //   component: (
+    //     <MyCalendar thePermissions={thePermissions} headers={headers} />
+    //   ),
+    // },
+    // {
+    //   title: "Flash Cards",
+    //   levelcard: true,
+    //   component: (
+    //     <FlashCards change={change} onChange={setChange} headers={headers} />
+    //   ),
+    // },
+    // {
+    //   title: "Ranking",
+    //   levelcard: true,
+    //   component: <Ranking headers={headers} />,
+    // },
+    // {
+    //   title: "English Courses",
+    //   component: <EnglishCourses headers={headers} />,
+    // },
+    // {
+    //   title: "Live Classes",
+    //   component: <GroupClasses headers={headers} />,
+    // },
     {
       title: "FAQ",
       component: <Faq />,
+      path: "/",
     },
     {
       title: "My Profile",
       component: <MyProfile headers={headers} />,
     },
-    {
-      path: "/adm-businessmanagement",
-      title: "Adm",
-      component:
-        verifyToken() && admin ? (
-          <Adm headers={headers} />
-        ) : (
-          <Blog headers={headers} />
-        ),
-    },
+    // {
+    //   path: "/adm-businessmanagement",
+    //   title: "Adm",
+    //   component:
+    //     verifyToken() && admin ? (
+    //       <Adm headers={headers} />
+    //     ) : (
+    //       <Blog headers={headers} />
+    //     ),
+    // },
   ];
 
   return (
@@ -134,23 +125,10 @@ export function HomePage({ headers }: HeadersProps) {
               element={
                 verifyToken() ? (
                   <BlogRouteSizeControlBox
-                    style={{ gap: "1rem", marginTop: "5rem" }}
+                    style={{ gap: "1rem", marginTop: "4.5rem" }}
                     className="smooth"
                   >
                     {component.component}
-                    {component.levelcard && (
-                      <LevelCard
-                        display={
-                          component.path == "adm-businessmanagement"
-                            ? "none"
-                            : "block"
-                        }
-                        change={change}
-                        headers={headers}
-                        _StudentId={_StudentId}
-                        picture={picture}
-                      />
-                    )}
                   </BlogRouteSizeControlBox>
                 ) : (
                   <Login />

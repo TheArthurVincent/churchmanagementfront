@@ -80,6 +80,8 @@ export default function ImageLessonModel({
         display: "flex",
         padding: "5px",
         margin: "10px 0",
+        justifyContent: "center",
+        width: "100%",
       }}
     >
       <UlGridImageLessons>
@@ -88,19 +90,19 @@ export default function ImageLessonModel({
             <LiGridImageLessons key={i}>
               <div>
                 {" "}
-                <ArvinButton
+                {/* <ArvinButton
                   color="white"
                   onClick={() => addNewCards(image.english, image.portuguese)}
                 >
                   en-pt
-                </ArvinButton>
+                </ArvinButton> */}
                 <ArvinButton
                   color="white"
                   onClick={() =>
                     addNewCardsInverted(image.english, image.portuguese)
                   }
                 >
-                  pt-en
+                  Flashcard
                 </ArvinButton>
               </div>
               <ImgLesson src={image.img} />

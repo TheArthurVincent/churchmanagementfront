@@ -59,7 +59,7 @@ const Countdown: React.FC = () => {
           borderRadius: "1rem",
           fontSize: "1.1rem",
           padding: "8px 12px",
-          fontFamily: "Athiti",
+          fontFamily: "Lato",
           fontWeight: 600,
           display: "inline",
         }}

@@ -29,7 +29,7 @@ export const DivHover = styled.span`
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  font-family: Athiti;
+  font-family: Lato;
   padding: 0.5rem 0;
   margin: 2px auto;
   background-color: ${alwaysWhite()};

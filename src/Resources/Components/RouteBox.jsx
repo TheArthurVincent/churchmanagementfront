@@ -30,15 +30,10 @@ export const RouteDiv = styled.div`
   width: 60rem;
   margin: auto;
   @media (max-width: 800px) {
-    width: 95vw;
+    width: 98vw;
   }
 `;
 
-export const RouteDivUp = styled.div`
-  @media (max-width: 800px) {
-    width: 95vw;
-  }
-`;
 export const OverFlow = styled.div`
   max-height: 15rem,
   overflow: auto,
@@ -49,11 +44,9 @@ export const OverFlow = styled.div`
 }
   `;
 export const BlogRouteSizeControlBox = styled.div`
-  display: grid;
-  grid-template-columns: 7fr 1fr;
+  display: flex;
   margin: 1rem auto;
-  justify-content: center;
-  max-width: 70vw;
+  max-width: 90vw;
   gap: 0.2rem;
   @media (max-width: 1200px) {
     display: flex;
@@ -80,7 +73,7 @@ export const SpanIcon = styled.span`
   opacity: 0.8;
   transition: 0.3s;
   display: flex;
-  font-family: Athiti;
+  font-family: Lato;
   align-items: center;
   &:hover {
     opacity: 1;
@@ -162,7 +155,7 @@ export const fadeIn = keyframes`
 export const DivFont = styled.div`
   font-weight: 700;
   font-size: 1.1rem;
-  font-family: Athiti;
+  font-family: Lato;
   margin: 0;
   @media (max-width: 500px) {
     font-size: 1rem;

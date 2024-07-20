@@ -1,21 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Athiti:wght@200;300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Athiti:wght@200;300;400;500;600;700&family=Electrolize&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gotu&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,900&family=PT+Sans+Narrow:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Athiti:wght@200;300;400;500;600;700&family=Electrolize&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gotu&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,900&family=PT+Sans+Narrow:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@200;300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:wght@200;300;400;500;600;700&family=Electrolize&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gotu&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,900&family=PT+Sans+Narrow:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:wght@200;300;400;500;600;700&family=Electrolize&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gotu&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,900&family=PT+Sans+Narrow:wght@400;700&display=swap");
 
 :root {
   --text: "Lato", sans-serif;
-  --title: "Athiti", sans-serif;
+  --title: "Lato", sans-serif;
   --black-arvin: #101010;
   --blue-arvin: #00132b;
   --green-arvin: #54bf08;
   --blue-arvin2: #001e42;
   --green-arvin2: #61de08;
   --white: #fefefe;
-
-}
-
-html {
-  overflow-x: hidden;
 }
 
 *::-webkit-scrollbar {
@@ -88,6 +83,24 @@ h4 {
   animation: piscar 2s infinite;
 }
 
+.glowing2 {
+  animation: piscar2 5s infinite;
+}
+
+@keyframes piscar2 {
+  0% {
+    background: #555;
+  }
+
+  50% {
+    background: #000;
+  }
+
+  100% {
+    background: #555;
+  }
+}
+
 @keyframes piscar {
   0% {
     background-color: #54bf08;
@@ -137,7 +150,6 @@ body {
   font-size: 1rem;
   cursor: pointer;
   border: none;
-
 }
 
 .audio-button:hover {
@@ -169,15 +181,40 @@ li {
   justify-content: center;
   width: 1rem;
   cursor: pointer;
+  padding: 10px;
   border: none;
   height: 1rem;
-  border-radius: 5px;
-  color: var(--black-arvin);
+  border-radius: 50%;
+  background-color: #424364;
+  color: white;
 }
 
-.button:hover {
+.button2 {
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  height: 1rem;
+  background-color: #424364;
+  color: white;
+}
+
+.button:hover,
+.button2:hover {
   font-weight: 600;
   background-color: rgb(204, 204, 204);
+}
+
+.name{
+  background-color: white;
+}
+
+.name:hover {
+  background-color: #fafafa;
 }
 
 .flashcard {
@@ -231,11 +268,11 @@ li {
 }
 
 .hvr {
-  background-color: #ddd;
+  background-color: #eee;
 }
 
 .hvr:hover {
-  background-color: #aaa;
+  background-color: #f2f2f2;
 }
 
 @keyframes slideInLeft {
@@ -259,7 +296,6 @@ li {
   to {
     transform: translateX(0);
     opacity: 1;
-
   }
 }
 
@@ -300,10 +336,16 @@ li {
   grid-template-columns: 1fr 1fr;
 }
 
-@media (max-width: 800px) {
-  .grid-flex {
-    grid-template-columns: 1fr;
-  }
+.grid-flex {
+  grid-template-columns: 1fr;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 input.inputs-style {
@@ -383,7 +425,6 @@ textarea.inputs-style:focus {
 .comments:focus {
   background-color: #efefef;
   border: none;
-
 }
 
 .do-print {
@@ -391,7 +432,6 @@ textarea.inputs-style:focus {
 }
 
 @media print {
-
   .do-print {
     display: block;
   }
