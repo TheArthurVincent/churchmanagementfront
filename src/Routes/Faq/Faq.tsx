@@ -1,13 +1,7 @@
 import React, { useState } from "react";
-import {
-  RouteDiv,
-  HOne,
-} from "../../Resources/Components/RouteBox";
+import { RouteDiv, HOne } from "../../Resources/Components/RouteBox";
 import { useUserContext } from "../../Application/SelectLanguage/SelectLanguage";
-import {
-  BackToHomePage,
-  getVideoEmbedUrl,
-} from "../../Resources/UniversalComponents";
+import { BackToHomePage, getVideoEmbedUrl } from "../../Resources/UniversalComponents";
 import { transparentWhite } from "../../Styles/Styles";
 import { Input } from "@mui/material";
 import { contentFaq, DivAppear, H3FAQ } from "./FaqContent";
@@ -71,11 +65,12 @@ export function Faq() {
             )}
             {expandedItem === index && (
               <DivAppear>
+                {/* @ts-ignore */}
                 {item.url && (
                   <div style={{ textAlign: "center" }}>
                     <IFrameVideoBlog
-                      src={getVideoEmbedUrl(item.url)}
-                      frameBorder="0"
+                      //@ts-ignore
+                      src={getVideoEmbedUrl(item.url ? item.url : "")}
                     />
                   </div>
                 )}
