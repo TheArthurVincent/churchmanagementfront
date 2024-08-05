@@ -2,36 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:wght@200;300;400;500;600;700&family=Electrolize&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gotu&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,900&family=PT+Sans+Narrow:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:wght@200;300;400;500;600;700&family=Electrolize&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gotu&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,900&family=PT+Sans+Narrow:wght@400;700&display=swap");
 
-:root {
-  --text: "Lato", sans-serif;
-  --title: "Lato", sans-serif;
-  --black-arvin: #101010;
-  --blue-arvin: #00132b;
-  --green-arvin: #54bf08;
-  --blue-arvin2: #001e42;
-  --green-arvin2: #61de08;
-  --white: #fefefe;
-}
-
-*::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-*::-webkit-scrollbar-track {
-  background: var(--blue-arvin);
-  border-radius: 12px;
-}
-
-*::-webkit-scrollbar-thumb {
-  border-radius: 12px;
-  background-color: var(--green-arvin2);
-}
-
 * {
   padding: 0;
   margin: 0;
-  font-family: var(--text);
+  font-family: "Lato";
 }
 
 div {
@@ -45,7 +19,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--title);
+  font-family: "Cinzel";
   margin: 0.6rem 0;
   font-size: 1.2rem;
 }
@@ -103,7 +77,7 @@ h4 {
 
 @keyframes piscar {
   0% {
-    background-color: #54bf08;
+    background-color: #728c53;
   }
 
   50% {
@@ -111,7 +85,7 @@ h4 {
   }
 
   100% {
-    background-color: #54bf08;
+    background-color: #728c53;
   }
 }
 
@@ -129,9 +103,8 @@ h4 {
 
 body {
   background-size: cover;
-  /* background-color: #c6ccd1; */
   background-color: #bcc2c7;
-  /* background-image: url("https://ik.imagekit.io/vjz75qw96/assets/assets_for_classes/bg2.png?updatedAt=1687554564387"); */
+  background-image: url("https://ik.imagekit.io/vjz75qw96/assets/IBRC/Cotia.jpg?updatedAt=1707919540944");
   background-attachment: fixed;
   background-position: center;
 }
@@ -146,7 +119,7 @@ body {
   padding: 0;
   padding-left: 10px;
   background-color: white;
-  color: #54bf08;
+  color: #728c53;
   font-size: 1rem;
   cursor: pointer;
   border: none;
@@ -162,7 +135,7 @@ body {
 }
 
 .comment {
-  color: var(--white);
+  color: white;
   margin-right: 0.5rem;
 }
 
@@ -209,7 +182,7 @@ li {
   background-color: rgb(204, 204, 204);
 }
 
-.name{
+.name {
   background-color: white;
 }
 
@@ -242,11 +215,11 @@ li {
 
 .flashcard-front {
   background-color: white;
-  box-shadow: 5px 5px 10px var(--blue-arvin);
+  box-shadow: 5px 5px 10px grey;
 }
 
 .flashcard-back {
-  box-shadow: 5px 5px 10px var(--black-arvin);
+  box-shadow: 5px 5px 10px grey;
   background-color: #fff;
   transform: rotateY(180deg);
 }
@@ -367,7 +340,7 @@ input.inputs-style {
 
 input.inputs-style:hover {
   background-color: #c6c6c6;
-  border: 1px solid #54bf08;
+  border: 1px solid #728c53;
   color: #011042;
 }
 
@@ -396,7 +369,7 @@ textarea.inputs-style {
 
 textarea.inputs-style:hover {
   background-color: #c6c6c6;
-  border: 1px solid #54bf08;
+  border: 1px solid #728c53;
   color: #011042;
 }
 

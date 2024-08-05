@@ -83,26 +83,26 @@ export function MyProfile({ headers }: HeadersProps) {
   }, []);
 
   const myProfileList = [
-    { title: UniversalTexts.name, data: user.name + " " + user.lastname },
-    { title: UniversalTexts.document, data: user.doc },
-    { title: UniversalTexts.phoneNumber, data: user.phoneNumber },
-    { title: UniversalTexts.email, data: user.email },
-    { title: UniversalTexts.username, data: user.username },
-    { title: UniversalTexts.dateOfBirth, data: formatDateBr(user.dateOfBirth) },
-    {
-      title: UniversalTexts.googleDriveLink,
-      data: user.googleDriveLink,
-      link: user.googleDriveLink,
-    },
+    { title: "Nome", data: user.name + " " + user.lastname },
+    { title: "CPF", data: user.doc },
+    { title: "Telefone", data: user.phoneNumber },
+    { title: "E-mail", data: user.email },
+    { title: "Data de nascimento", data: user.dateOfBirth },
   ];
 
   return (
     <>
       {headers ? (
-        <RouteDiv className="smooth grid-flex">
+        <RouteDiv
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-around",
+          }}
+          className="smooth"
+        >
           <Helmets text="My Profile" />
           <div>
-            <HOne>{UniversalTexts.myProfile}</HOne>
             <ul
               style={{
                 display: "grid",
@@ -124,15 +124,6 @@ export function MyProfile({ headers }: HeadersProps) {
                     alignItems: "center",
                   }}
                 >
-                  <img
-                    style={{
-                      maxWidth: "7rem",
-                      paddingBottom: "1rem",
-                      borderRadius: "50%",
-                    }}
-                    src={user.picture}
-                    alt=""
-                  />
                   <div>
                     {myProfileList.map((item: any, index: number) => {
                       return (
@@ -159,9 +150,9 @@ export function MyProfile({ headers }: HeadersProps) {
             </ul>
           </div>
           <div>
-            <HOne>{UniversalTexts.newPassword}</HOne>
             <form
               style={{
+                display: "grid",
                 textAlign: "center",
               }}
             >
@@ -170,25 +161,16 @@ export function MyProfile({ headers }: HeadersProps) {
                 onChange={(event) => setNewPassword(event.target.value)}
                 placeholder={UniversalTexts.newPassword}
                 type="password"
-                className="inputs-style"
               />
               <input
                 value={confirmPassword}
                 onChange={(event) => setConfirmPassword(event.target.value)}
                 placeholder={UniversalTexts.confirmNewPassword}
                 type="password"
-                className="inputs-style"
               />
-              <Button
-                style={{
-                  color: "#fff",
-                  width: "8rem",
-                  backgroundColor: "#138017",
-                }}
-                onClick={() => editStudentPassword()}
-              >
+              <ArvinButton onClick={() => editStudentPassword()}>
                 Salvar
-              </Button>
+              </ArvinButton>
             </form>
           </div>
         </RouteDiv>

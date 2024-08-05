@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { primaryColor, secondaryColor } from "../../Styles/Styles";
-import {
-  InputField,
-  LogoSVG,
-  backDomain,
-} from "../../Resources/UniversalComponents";
+import { InputField, backDomain } from "../../Resources/UniversalComponents";
 import "font-awesome/css/font-awesome.min.css";
 import axios from "axios";
 import { Alert, Button, CircularProgress } from "@mui/material";
@@ -53,7 +49,6 @@ export function Login() {
     }
   };
 
-
   return (
     <div
       style={{
@@ -83,6 +78,14 @@ export function Login() {
                 borderRadius: "10px",
               }}
             >
+              <img
+                style={{
+                  margin: "auto",
+                  maxWidth: "10rem",
+                }}
+                src="https://ik.imagekit.io/vjz75qw96/assets/IBRC/logo.png?updatedAt=1687980892018"
+                alt=""
+              />
               <InputField
                 value={email}
                 onChange={(event: any) => setEmail(event.target.value)}

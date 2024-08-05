@@ -112,58 +112,22 @@ export const TopBar: FC = () => {
 
   const allLinksForUser = [
     {
-      title: UniversalTexts.calendar,
+      title: "Calendário",
       endpoint: "/my-calendar",
       icon: "calendar",
       display: "block",
     },
     {
-      title: "Homework",
-      endpoint: "/homework",
-      icon: "book",
-      display: "block",
-    },
-    {
-      title: "Flashcards",
-      endpoint: "/flash-cards",
-      icon: "clone",
-      display: "block",
-    },
-    {
-      title: "Ranking",
-      endpoint: "/ranking",
-      icon: "th-list",
-      display: "block",
-    },
-    {
-      title: UniversalTexts.myClasses,
-      endpoint: "/my-classes",
-      icon: "user",
-      display: "block",
-    },
-    {
-      title: UniversalTexts.groupClasses,
-      endpoint: "/group-classes",
-      display: "block",
-      icon: "users",
-    },
-    {
-      title: "Courses",
-      endpoint: "/english-courses",
+      title: "Cursos",
+      endpoint: "/cursos",
       icon: "address-book-o",
       display: "block",
     },
     {
-      title: UniversalTexts.myProfile,
-      endpoint: "/my-profile",
+      title: "Meu perfil",
+      endpoint: "/meu-perfil",
       display: "block",
       icon: "user-o",
-    },
-    {
-      title: UniversalTexts.faq,
-      endpoint: "/faq",
-      icon: "question",
-      display: "block",
     },
   ];
 
@@ -182,7 +146,13 @@ export const TopBar: FC = () => {
               display: seeItems ? "block" : "none",
             }}
           >
-            {myLogo}
+            <img
+              style={{
+                maxWidth: "7rem",
+              }}
+              src="https://ik.imagekit.io/vjz75qw96/assets/IBRC/logo.png?updatedAt=1687980892018"
+              alt=""
+            />
           </LogoStyle>
         </Link>
       </SpanDisapear>
