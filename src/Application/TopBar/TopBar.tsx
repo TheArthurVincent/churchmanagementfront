@@ -8,9 +8,9 @@ import {
   LogoStyle,
   Hamburguer,
 } from "./TopBar.Styled";
-import { LogoSVG, SpanHover } from "../../Resources/UniversalComponents";
+import { SpanHover } from "../../Resources/UniversalComponents";
 import { useUserContext } from "../SelectLanguage/SelectLanguage";
-import { primaryColor, secondaryColor, alwaysBlack } from "../../Styles/Styles";
+import { secondaryColor, alwaysBlack } from "../../Styles/Styles";
 import { ItemTopBarProps, LinkItem } from "./TopBarTypes";
 import { ArvinButton } from "../../Resources/Components/ItemsLibrary";
 import { SpanDisapear } from "../../Routes/Blog/Blog.Styled";
@@ -88,7 +88,6 @@ export const TopBar: FC = () => {
   const [visible, setVisible] = useState<string>("none");
   const { handleLanguageChange, UniversalTexts } = useUserContext();
   const [permissions, setPermissions] = useState<string>("");
-  const [seeItems, setSeeItems] = useState(true);
 
   const onLoggOut = () => {
     localStorage.removeItem("authorization");
@@ -129,17 +128,13 @@ export const TopBar: FC = () => {
     setVisible(visible === "flex" ? "none" : "flex");
   };
   const location = useLocation();
-  const myLogo = LogoSVG(primaryColor(), secondaryColor(), 1);
+
   return (
     <TopBarContainer>
       <Hamburguer onClick={handleVisible}>☰</Hamburguer>
       <SpanDisapear>
         <Link to="/">
-          <LogoStyle
-            style={{
-              display: seeItems ? "block" : "none",
-            }}
-          >
+          <LogoStyle>
             <img
               style={{
                 maxWidth: "7rem",
@@ -162,26 +157,6 @@ export const TopBar: FC = () => {
             alignItems: "center",
           }}
         >
-          <NavLink
-            style={{
-              color: location.pathname.includes("home")
-                ? secondaryColor()
-                : alwaysBlack(),
-              textDecoration: "none",
-            }}
-            to="/"
-          >
-            <SpanHover
-              style={{
-                fontWeight: 700,
-                fontSize: "1.1rem",
-                fontFamily: "Lato",
-                textDecoration: "none",
-              }}
-            >
-              {UniversalTexts.homePage}
-            </SpanHover>
-          </NavLink>
           {allLinksForUser.map((link, index) => {
             return (
               <NavLink
@@ -212,41 +187,39 @@ export const TopBar: FC = () => {
             );
           })}
         </div>
-        {seeItems && (
-          <div
-            style={{
-              display: permissions == "superadmin" ? "block" : "none",
-            }}
-          >
-            {toAdm.map((link, index) => {
-              return (
-                <NavLink
+        <div
+          style={{
+            display: permissions == "superadmin" ? "block" : "none",
+          }}
+        >
+          {toAdm.map((link, index) => {
+            return (
+              <NavLink
+                style={{
+                  color: location.pathname.includes(link.endpoint)
+                    ? secondaryColor()
+                    : alwaysBlack(),
+                  cursor: location.pathname.includes(link.endpoint)
+                    ? "default"
+                    : "pointer",
+                  textDecoration: "none",
+                }}
+                key={index}
+                to={link.endpoint}
+              >
+                <SpanHover
                   style={{
-                    color: location.pathname.includes(link.endpoint)
-                      ? secondaryColor()
-                      : alwaysBlack(),
-                    cursor: location.pathname.includes(link.endpoint)
-                      ? "default"
-                      : "pointer",
-                    textDecoration: "none",
+                    fontWeight: 700,
+                    fontSize: "1.1rem",
+                    fontFamily: "Lato",
                   }}
-                  key={index}
-                  to={link.endpoint}
                 >
-                  <SpanHover
-                    style={{
-                      fontWeight: 700,
-                      fontSize: "1.1rem",
-                      fontFamily: "Lato",
-                    }}
-                  >
-                    {link.title}
-                  </SpanHover>
-                </NavLink>
-              );
-            })}
-          </div>
-        )}
+                  {link.title}
+                </SpanHover>
+              </NavLink>
+            );
+          })}
+        </div>
       </TopBarNavigationBurger>
       <BackgroundClick onClick={handleVisible} style={{ display: visible }} />
       <TopBarNavigation>
@@ -263,7 +236,6 @@ export const TopBar: FC = () => {
               <NavLink
                 key={index}
                 style={{
-                  display: seeItems ? "block" : "none",
                   color: location.pathname.includes(link.endpoint)
                     ? secondaryColor()
                     : alwaysBlack(),
@@ -282,7 +254,6 @@ export const TopBar: FC = () => {
             );
           })}
           {permissions === "superadmin" &&
-            seeItems &&
             toAdm.map((link, index) => {
               return (
                 <NavLink
@@ -310,28 +281,7 @@ export const TopBar: FC = () => {
       <div style={{ display: "flex", gap: "3rem", alignItems: "center" }}>
         {" "}
         <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-          <SpanDisapear>
-            <i
-              onClick={() => {
-                setSeeItems(!seeItems);
-              }}
-              onMouseOver={() => {
-                setSeeItems(true);
-              }}
-              style={{
-                cursor: "pointer",
-                display: permissions == "superadmin" ? "block" : "none",
-              }}
-              className="fa fa-eye"
-            />
-          </SpanDisapear>
-          <ArvinButton
-            style={{ display: seeItems ? "block" : "none" }}
-            onClick={onLoggOut}
-          >
-            {" "}
-            {UniversalTexts.leaveButton}
-          </ArvinButton>
+          <ArvinButton onClick={onLoggOut}> Sair</ArvinButton>
         </div>
       </div>
     </TopBarContainer>
