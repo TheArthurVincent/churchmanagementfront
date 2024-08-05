@@ -1,7 +1,5 @@
 import React from "react";
-import { primaryColor, textPrimaryColorContrast } from "../../Styles/Styles";
 import { Link } from "react-router-dom";
-import RankingExplanation from "../Ranking/RankingComponents/RankingExplanation";
 
 export const contentFaq = [
   {
@@ -240,12 +238,6 @@ export const contentFaq = [
     url: "https://vimeo.com/971573645",
     tags: ["cursos", "courses", "business"],
     explanation: <div></div>,
-  },
-  {
-    instruction: "Como funcionam o ranking e os níveis?",
-    url: "https://vimeo.com/971573962",
-    tags: ["Rank", "Score", "scoring", "level", "pontos", "pontuação"],
-    explanation: <RankingExplanation />,
   },
   {
     instruction: "Quais são os termos e condições contratuais?",

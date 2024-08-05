@@ -122,7 +122,7 @@ export default function MyCalendar({ headers, thePermissions }) {
     }
   };
   useEffect(() => {
-    fetchGeneralEvents();
+    // fetchGeneralEvents();
   }, []);
 
   const fetchGeneralEventsNoLoading = async () => {
@@ -549,7 +549,7 @@ export default function MyCalendar({ headers, thePermissions }) {
 
   useEffect(() => {
     if (newStudentId !== "") {
-      fetchOneSetOfTutorings(newStudentId);
+      // fetchOneSetOfTutorings(newStudentId);
     }
   }, [newStudentId]);
 

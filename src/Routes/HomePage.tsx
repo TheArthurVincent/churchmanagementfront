@@ -8,9 +8,7 @@ import Faq from "./Faq/Faq";
 import { BlogRouteSizeControlBox } from "../Resources/Components/RouteBox";
 import { HeadersProps } from "../Resources/types.universalInterfaces";
 import { TopBar } from "../Application/TopBar/TopBar";
-import AppFooter from "../Application/Footer/Footer";
 import Adm from "./Adm/Adm";
-import EnglishCourses from "./EnglishLessons/EnglishCourses";
 import MyCalendar from "./MyCalendar/MyCalendar";
 
 export function HomePage({ headers }: HeadersProps) {
@@ -45,10 +43,6 @@ export function HomePage({ headers }: HeadersProps) {
       component: (
         <MyCalendar thePermissions={thePermissions} headers={headers} />
       ),
-    },
-    {
-      title: "Cursos",
-      component: <EnglishCourses headers={headers} />,
     },
     {
       title: "FAQ",
@@ -100,7 +94,6 @@ export function HomePage({ headers }: HeadersProps) {
           );
         })}
       </Routes>
-      <AppFooter see={see} />
       <Outlet />
     </div>
   );

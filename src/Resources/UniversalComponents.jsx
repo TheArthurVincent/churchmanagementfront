@@ -8,85 +8,9 @@ import {
   textPrimaryColorContrast,
 } from "../Styles/Styles";
 import { Link } from "react-router-dom";
-import { levels } from "../Routes/Ranking/RankingComponents/ranking.json";
 import { Helmet } from "react-helmet";
 import { MyButton } from "./Components/ItemsLibrary";
 
-// Função que verifica o nível do aluno
-export function updateScore(totalScore) {
-  var level = 1;
-  var color = "#000";
-  var card =
-    "https://ik.imagekit.io/vjz75qw96/assets/icons/level%20(10).png?updatedAt=1719515621171";
-  var icon = "fa fa-clone";
-  var color = "#eee";
-  var textcolor = "black";
-  var text = "White Belt";
-  var discount = "0%";
-  var backgroundcolor = "#ccc";
-  var image2 =
-    "https://ik.imagekit.io/vjz75qw96/assets/pngs/1.png?updatedAt=1715899265785";
-  var image =
-    "https://ik.imagekit.io/vjz75qw96/assets/pngs/white.png?updatedAt=1715899271696";
-  var background =
-    "https://ik.imagekit.io/vjz75qw96/assets/assets_for_classes/ASSETS%20AND%20LIABILITIES.jpg?updatedAt=1692919364512";
-  for (let i = 0; i < levels.length; i++) {
-    if (levels[i + 1]) {
-      if (
-        totalScore >= levels[i].totalScore &&
-        totalScore < levels[i + 1].totalScore
-      ) {
-        level = i;
-        color = levels[i].color;
-        icon = levels[i].icon;
-        textcolor = levels[i].textcolor;
-        card = levels[i].card;
-        text = levels[i].text;
-        discount = levels[i].discount;
-        backgroundcolor = levels[i].backgroundcolor;
-        background = levels[i].background;
-        image2 = levels[i].image2;
-        image = levels[i].image;
-        break;
-      }
-    } else {
-      level = i;
-      color = levels[i].color;
-      icon = levels[i].icon;
-      image = levels[i].image;
-      card = levels[i].card;
-      image2 = levels[i].image2;
-      textcolor = levels[i].textcolor;
-      text = levels[i].text;
-      discount = levels[i].discount;
-      backgroundcolor = levels[i].backgroundcolor;
-      background = levels[i].background;
-      break;
-    }
-  }
-  return {
-    level,
-    color,
-    icon,
-    card,
-    image,
-    image2,
-    textcolor,
-    text,
-    discount,
-    backgroundcolor,
-    background,
-  };
-}
-
-// Função que verifica o nível do aluno
-
-export const UniversalButtonsDivFlex = styled.div`
-  display: flex;
-  margin-top: 2rem;
-  justify-content: space-evenly;
-  gap: 0.5rem;
-`;
 export const SpanHover = styled.span`
   padding: 0 8px;
   font-family: Lato;

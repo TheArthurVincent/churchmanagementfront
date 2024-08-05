@@ -118,12 +118,6 @@ export const TopBar: FC = () => {
       display: "block",
     },
     {
-      title: "Cursos",
-      endpoint: "/cursos",
-      icon: "address-book-o",
-      display: "block",
-    },
-    {
       title: "Meu perfil",
       endpoint: "/meu-perfil",
       display: "block",
@@ -330,23 +324,6 @@ export const TopBar: FC = () => {
               }}
               className="fa fa-eye"
             />
-          </SpanDisapear>
-          <SpanDisapear>
-            <form
-              style={{
-                display: seeItems ? "block" : "none",
-              }}
-            >
-              <select
-                id="language"
-                name="language"
-                onChange={(e) => handleLanguageChange(e.target.value)}
-                defaultValue="en"
-              >
-                <option value="en">EN-US</option>
-                <option value="pt">PT-BR</option>
-              </select>
-            </form>
           </SpanDisapear>
           <ArvinButton
             style={{ display: seeItems ? "block" : "none" }}
