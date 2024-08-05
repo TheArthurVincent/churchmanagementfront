@@ -6,13 +6,11 @@ import {
 import { useUserContext } from "../../Application/SelectLanguage/SelectLanguage";
 import {
   BackToHomePage,
-  IFrameVideoClass,
   getVideoEmbedUrl,
 } from "../../Resources/UniversalComponents";
 import { transparentWhite } from "../../Styles/Styles";
-import { DivAppear, H3FAQ } from "../MyClasses/MyClasses.Styled";
 import { Input } from "@mui/material";
-import { contentFaq } from "./FaqContent";
+import { contentFaq, DivAppear, H3FAQ } from "./FaqContent";
 import Helmets from "../../Resources/Helmets";
 import { IFrameVideoBlog } from "../Blog/Blog.Styled";
 
